@@ -1,5 +1,6 @@
 package com.centroweg.weg.wegoffice.domain.entity;
 
+import com.centroweg.weg.wegoffice.application.mapper.ServiceOrderMapper;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +29,7 @@ public class Student {
     @JoinColumn(name = "class_id", nullable = false)
     private Classes classes;
 
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "alunosEscalados")
     private List<ServiceOrder> serviceOrders;
 
     public Student(String name, String email) {

@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -37,9 +39,13 @@ public class ServiceOrder {
     @JoinColumn(name = "teacher_id", nullable = false)
     private Teacher teacher;
 
-    @ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
-    private Student student;
+    @ManyToMany
+    @JoinTable(
+            name = "student_so",
+            joinColumns = @JoinColumn(name = "so_id"),
+            inverseJoinColumns = @JoinColumn(name = "student_id")
+    )
+    private List<Student> students;
 
 
     public ServiceOrder(String equipment, String defectReported, StatusOS status, String materialsUsed, String technicalConclusion) {

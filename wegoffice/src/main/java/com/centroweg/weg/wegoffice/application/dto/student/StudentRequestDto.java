@@ -1,6 +1,6 @@
 package com.centroweg.weg.wegoffice.application.dto.student;
 
-public record StudenteRequestDto(
+public record StudentRequestDto(
     String name,
     String email,
     Long classId
