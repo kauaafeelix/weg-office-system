@@ -23,7 +23,7 @@ public class Classes {
 
     @ManyToOne
     @JoinColumn(name = "professor_id", nullable = false)
-    private Teacher professor;
+    private Teacher teacher;
 
     @OneToMany(mappedBy = "classes", cascade = CascadeType.ALL)
     private List<Student> students;
