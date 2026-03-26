@@ -19,7 +19,7 @@ public class Classes {
     private Long id;
 
     @Column(nullable = false)
-    private String codigo;
+    private String code;
 
     @ManyToOne
     @JoinColumn(name = "professor_id", nullable = false)
@@ -29,6 +29,6 @@ public class Classes {
     private List<Student> students;
 
     public Classes(String codigo) {
-        this.codigo = codigo;
+        this.code = code;
     }
 }
