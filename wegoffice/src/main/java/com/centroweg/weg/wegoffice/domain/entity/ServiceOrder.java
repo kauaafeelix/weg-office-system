@@ -1,0 +1,45 @@
+package com.centroweg.weg.wegoffice.domain.entity;
+
+import com.centroweg.weg.wegoffice.domain.entity.enuns.StatusOS;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+@Entity
+public class ServiceOrder {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String equipment;
+
+    @Column(nullable = false, name = "defect_reported")
+    private String defectReported;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusOS status;
+
+    @Column(nullable = false, name = "materials_used")
+    private String materialsUsed;
+
+    @Column(nullable = false, name = "technical_conclusion")
+    private String technicalConclusion;
+
+    @ManyToOne
+    @JoinColumn(name = "teacher_id", nullable = false)
+    private Teacher teacher;
+
+    @ManyToOne
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;
+
+
+}
