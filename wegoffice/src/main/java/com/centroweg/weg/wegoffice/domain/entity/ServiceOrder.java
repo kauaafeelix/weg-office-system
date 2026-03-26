@@ -42,4 +42,11 @@ public class ServiceOrder {
     private Student student;
 
 
+    public ServiceOrder(String equipment, String defectReported, StatusOS status, String materialsUsed, String technicalConclusion) {
+        this.equipment = equipment;
+        this.defectReported = defectReported;
+        this.status = status;
+        this.materialsUsed = materialsUsed;
+        this.technicalConclusion = technicalConclusion;
+    }
 }
