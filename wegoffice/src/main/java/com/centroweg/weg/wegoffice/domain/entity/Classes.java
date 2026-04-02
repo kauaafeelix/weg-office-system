@@ -22,13 +22,13 @@ public class Classes {
     private String code;
 
     @ManyToOne
-    @JoinColumn(name = "professor_id", nullable = false)
+    @JoinColumn(name = "teacher_id", nullable = false)
     private Teacher teacher;
 
     @OneToMany(mappedBy = "classes", cascade = CascadeType.ALL)
     private List<Student> students;
 
-    public Classes(String codigo) {
+    public Classes(String code) {
         this.code = code;
     }
 }
