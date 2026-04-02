@@ -48,7 +48,7 @@ public class ClassesService {
                 .toList();
     }
 
-    public ClassesResponseDto update (ClassesRequestDto request, Long id){
+    public ClassesResponseDto update ( Long id, ClassesRequestDto request){
         Classes classes = classesRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("O ID da turma não foi encontrado"));
 
