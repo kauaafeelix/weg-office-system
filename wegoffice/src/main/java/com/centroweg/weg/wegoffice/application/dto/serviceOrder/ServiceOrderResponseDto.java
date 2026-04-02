@@ -11,8 +11,8 @@ public record ServiceOrderResponseDto(
         StatusOS status,
         String materialsUsed,
         String technicalConclusion,
-        Long teacherId,
-        List<Long>studentIds
+        String nameTeacher,
+        List<String>studentName
 
 ) {
 }

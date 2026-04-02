@@ -55,9 +55,9 @@ public class ServiceOrderService {
                 .toList();
     }
 
-    public ServiceOrderResponseDto update (ServiceOrderRequestDto request, Long id){
+    public ServiceOrderResponseDto update ( Long id, ServiceOrderRequestDto request){
         ServiceOrder serviceOrder = orderRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("O ID do professor não foi encontrado"));
+                .orElseThrow(()-> new RuntimeException("O ID da ordem não foi encontrado"));
 
         Teacher teacher = teacherRepository.findById(request.teacherId())
                 .orElseThrow(()-> new RuntimeException("O ID do professor não foi encontrado"));
@@ -77,7 +77,7 @@ public class ServiceOrderService {
 
     public void delete (Long id){
         ServiceOrder serviceOrder = orderRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("O ID do professor não foi encontrado"));
+                .orElseThrow(()-> new RuntimeException("O ID da ordem não foi encontrado"));
 
         orderRepository.delete(serviceOrder);
     }

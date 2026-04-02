@@ -7,6 +7,9 @@ import java.util.List;
 public record ServiceOrderRequestDto(
         String equipment,
         String defectReported,
+        StatusOS status,
+        String materialsUsed,
+        String technicalConclusion,
         Long teacherId,
         List<Long> studentIds
 ) {
