@@ -3,9 +3,9 @@
 ## WegOffice
 Aplicação Spring Boot para gerenciamento de classes, alunos, professores e ordens de serviço.
 
-#### Professor: Lucas Sousa dos Santos
+#### Professor: [Lucas Sousa dos Santos](https://github.com/engineer-lucas)
 #### UC: Arquitetura de Sistemas
-#### Aluno: Kauã Felix da Silva Costa
+#### Aluno: [Kauã Felix da Silva Costa](https://github.com/kauaafeelix)
 #### Turma: MIDS 78
 
 ### Tecnologias Utilizadas
