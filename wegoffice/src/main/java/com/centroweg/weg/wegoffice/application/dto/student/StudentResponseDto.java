@@ -4,6 +4,6 @@ public record StudentResponseDto(
         Long id,
         String name,
         String email,
-        Long classId
+        String codeClass
 ) {
 }

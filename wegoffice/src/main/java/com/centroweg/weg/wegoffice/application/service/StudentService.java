@@ -47,7 +47,7 @@ public class StudentService {
                 .toList();
     }
 
-    public StudentResponseDto update (StudentRequestDto request, Long id){
+    public StudentResponseDto update (Long id, StudentRequestDto request ){
         Student student = studentRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("O ID do aluno não foi encontrado"));
 
