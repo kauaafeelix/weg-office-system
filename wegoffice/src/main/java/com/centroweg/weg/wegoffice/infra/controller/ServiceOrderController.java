@@ -4,6 +4,7 @@ package com.centroweg.weg.wegoffice.infra.controller;
 import com.centroweg.weg.wegoffice.application.dto.serviceOrder.ServiceOrderRequestDto;
 import com.centroweg.weg.wegoffice.application.dto.serviceOrder.ServiceOrderResponseDto;
 import com.centroweg.weg.wegoffice.application.service.ServiceOrderService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class ServiceOrderController {
     private final ServiceOrderService service;
 
     @PostMapping
-    public ResponseEntity<ServiceOrderResponseDto> save (@RequestBody ServiceOrderRequestDto request){
+    public ResponseEntity<ServiceOrderResponseDto> save (@Valid @RequestBody ServiceOrderRequestDto request){
 
         ServiceOrderResponseDto response = service.save(request);
 
@@ -46,7 +47,7 @@ public class ServiceOrderController {
     @PutMapping("/{id}")
     public ResponseEntity<ServiceOrderResponseDto> update (
             @PathVariable Long id,
-            @RequestBody ServiceOrderRequestDto request
+            @Valid  @RequestBody ServiceOrderRequestDto request
     ){
 
         ServiceOrderResponseDto response = service.update(id, request);

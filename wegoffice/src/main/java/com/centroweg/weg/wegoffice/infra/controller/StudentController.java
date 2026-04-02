@@ -6,6 +6,7 @@ import com.centroweg.weg.wegoffice.application.dto.classes.ClassesResponseDto;
 import com.centroweg.weg.wegoffice.application.dto.student.StudentRequestDto;
 import com.centroweg.weg.wegoffice.application.dto.student.StudentResponseDto;
 import com.centroweg.weg.wegoffice.application.service.StudentService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class StudentController {
 
 
     @PostMapping
-    public ResponseEntity<StudentResponseDto> save (@RequestBody StudentRequestDto request){
+    public ResponseEntity<StudentResponseDto> save (@Valid @RequestBody StudentRequestDto request){
 
         StudentResponseDto response = service.save(request);
 
@@ -46,7 +47,7 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<StudentResponseDto> update (@PathVariable Long id, @RequestBody StudentRequestDto request){
+    public ResponseEntity<StudentResponseDto> update (@PathVariable Long id, @Valid  @RequestBody StudentRequestDto request){
 
         StudentResponseDto response = service.update(id, request);
 

@@ -3,6 +3,7 @@ package com.centroweg.weg.wegoffice.infra.controller;
 import com.centroweg.weg.wegoffice.application.dto.classes.ClassesRequestDto;
 import com.centroweg.weg.wegoffice.application.dto.classes.ClassesResponseDto;
 import com.centroweg.weg.wegoffice.application.service.ClassesService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ public class ClassesController {
 
 
     @PostMapping
-    public ResponseEntity<ClassesResponseDto> save (@RequestBody ClassesRequestDto request){
+    public ResponseEntity<ClassesResponseDto> save (@Valid @RequestBody ClassesRequestDto request){
 
         ClassesResponseDto response = service.save(request);
 
@@ -43,7 +44,7 @@ public class ClassesController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ClassesResponseDto> update (@PathVariable Long id, @RequestBody ClassesRequestDto request){
+    public ResponseEntity<ClassesResponseDto> update (@PathVariable Long id, @Valid @RequestBody ClassesRequestDto request){
 
         ClassesResponseDto response = service.update(id, request);
 
