@@ -29,7 +29,7 @@ public class Student {
     @JoinColumn(name = "class_id", nullable = false)
     private Classes classes;
 
-    @ManyToMany(mappedBy = "alunosEscalados")
+    @ManyToMany(mappedBy = "students")
     private List<ServiceOrder> serviceOrders;
 
     public Student(String name, String email) {
