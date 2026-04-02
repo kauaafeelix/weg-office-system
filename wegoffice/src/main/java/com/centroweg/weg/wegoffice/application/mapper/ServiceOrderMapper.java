@@ -12,7 +12,10 @@ public class ServiceOrderMapper {
     public ServiceOrder toEntity(ServiceOrderRequestDto request){
         return new ServiceOrder(
                 request.equipment(),
-                request.defectReported()
+                request.defectReported(),
+                request.status(),
+                request.materialsUsed(),
+                request.technicalConclusion()
         );
     }
 
@@ -24,8 +27,8 @@ public class ServiceOrderMapper {
                 serviceOrder.getStatus(),
                 serviceOrder.getMaterialsUsed(),
                 serviceOrder.getTechnicalConclusion(),
-                serviceOrder.getTeacher().getId(),
-                serviceOrder.getStudents().stream().map(Student::getId).toList()
+                serviceOrder.getTeacher().getName(),
+                serviceOrder.getStudents().stream().map(Student::getName).toList()
         );
     }
 }

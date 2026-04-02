@@ -20,7 +20,7 @@ public class StudentMapper {
                 student.getId(),
                 student.getName(),
                 student.getEmail(),
-                student.getClasses().getId()
+                student.getClasses().getCode()
         );
     }
 }

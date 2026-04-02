@@ -18,7 +18,7 @@ public class ClassesMapper {
         return new ClassesResponseDto(
                 classes.getId(),
                 classes.getCode(),
-                classes.getTeacher().getId()
+                classes.getTeacher().getName()
         );
     }
 }
